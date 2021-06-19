@@ -15,14 +15,16 @@
             <tr>
                 <td id="leftPart">
                     <label for="bill" style="color:grey;">Bill</label></br>
-                    <input type="number" id="bill" style="width:90%;
+                    <input type="number" id="bill" value= 0  style="width:90%;
                     padding: 10px;
-                    border:2px solid gray;"/></br>
+                    border:2px solid gray;
+                    text-align: center;
+                    font-size : large;"/></br>
                     </br>
                     <label for="tip" style="color:grey;">Tip %</label></br>
                     <div class="iconDiv">
-                    <input type="button" value=" + "  />
-                    <input type="number" id="tip"class="inputIcon" value="0%"/>
+                    <input type="button" value=" + " style="float:left"  />
+                    <input type="number" id="tip"class="inputIcon" value=0 />
                     <input type="button" value=" - " style="float:right;"/>
                     </div>
 
@@ -30,8 +32,8 @@
                     </br>
                     <label for="tip" style="color:grey ;">Number of People</label></br>
                     <div class="iconDiv">
-                    <input type="button" value=" + "  />
-                    <input type="number" id="tip" class="inputIcon">
+                    <input type="button" value=" + " />
+                    <input type="number" id="tip" class="inputIcon" value=1 />
                     <input type="button" value=" - " style="float:right;"/>
                     </div>
 
@@ -66,5 +68,5 @@
         </table>
     </div>
 </body>
-
+<script src="index.js"></script>
 </html>
