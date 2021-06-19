@@ -21,10 +21,21 @@ input::-webkit-inner-spin-button {
 }
 
 .inputIcon{
-    width:60%;
-    padding:6px;
+    width:61%;
+    padding:10px 12px 10px 10px ;
+    margin-bottom: 0.4%;
     text-align: center;
+    
 }
 input[type=button]{
-    padding:6px;
+    padding:6px 6px 10.8px 9px;
+    border:none;
+    font-size: large;
+    
+}
+.iconDiv{
+    border: 2px solid grey; 
+  
+    overflow-x: auto;
+
 }
