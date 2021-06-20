@@ -21,10 +21,12 @@ input::-webkit-inner-spin-button {
 }
 
 .inputIcon{
-    width:61%;
+    width: 61%;
+    margin: auto;
     padding:10px 10px 10px 10px ;
     text-align: center;
     font-size: large;
+  
     
 }
 input[type=button]{
@@ -33,11 +35,10 @@ input[type=button]{
     font-size: large;
     text-align: center;
     
-    
 }
 .iconDiv{
     border: 2px solid grey; 
-    align-items: center;
     overflow-x: auto;
+    box-sizing: content-box;
 
 }
