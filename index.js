@@ -94,6 +94,7 @@ tip.addEventListener("change", () => {
 class inputException{
     static billCheck(){
         let target = document.getElementById("bill").value ;
+        let line = document.getElementById("billException") ;
         if( Number(target) < 0  ){
             let line = document.getElementById("billException") ;
             line.style.display="block" ;
@@ -101,7 +102,7 @@ class inputException{
             line.style.fontSize = "70%";
             line.innerHTML = "Bill Should be +ve in value " ; 
         }
-        else if( isNaN(target) || target == " ") 
+        else if( target.length==0 ) 
         {
             let line = document.getElementById("billException") ;
             line.style.display="block" ;
@@ -110,7 +111,7 @@ class inputException{
             line.innerHTML = "Enter a valid number" ; 
 
         }
-        else if(!isNaN(Number(target))){
+        else {
             let line = document.getElementById("billException") ;
             line.style.display="none";
         
