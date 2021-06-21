@@ -12,20 +12,24 @@ class TipCalculator {
     }
 
     // method to display Bill per Person   
-    amountPerPerson() {
+    amountPerPerson(action) {
         this.totalTipAmount = (Number(this.bill) + (Number(this.bill) * Number(this.tip)) / 100);
         this.totalBill = this.totalTipAmount;
         let eachShare = this.totalBill / Number(this.number);
         let target = document.getElementById("totalBill");
-        target.innerHTML = "$" + eachShare;
+            target.style.display ="block" ;
+            target.innerHTML = "$" + eachShare;
 
     }
 
     // method to display tip per person 
-    tipPerPerson = () => {
+    tipPerPerson = (action) => {
         let tipEach = (this.bill) * Number(tip.value) / (Number(this.number) * 100);
         let target = document.getElementById("tipEach");
-        target.innerHTML = "$" + tipEach;
+            target.style.display ="block" ;
+            target.innerHTML = "$" + tipEach;
+          
+        
 
     }
 
@@ -60,6 +64,9 @@ class TipCalculator {
 
 }
 
+// creating the instance of calculator 
+let calc = new TipCalculator();
+
 // class handeling input exceptions 
 class inputException {
     static billCheck() {
@@ -80,6 +87,9 @@ class inputException {
         }
         else {
             line.style.display = "none";
+            calc.bill = bill.value;
+            calc.amountPerPerson("show");
+            calc.tipPerPerson("show");
 
         }
 
@@ -106,7 +116,7 @@ class inputException {
             line.innerHTML = "Enter a valid number";
 
         }
-        else if( !(Number.isInteger(Number(target)))){
+        else if (!(Number.isInteger(Number(target)))) {
             line.style.display = "block";
             line.style.color = "red";
             line.style.fontSize = "70%";
@@ -114,7 +124,13 @@ class inputException {
 
         }
 
-        else { line.style.display = "none"; }
+        else {
+            line.style.display = "none";
+            calc.number = number.value;
+            calc.amountPerPerson("show");
+            calc.tipPerPerson("show");
+
+        }
 
 
     }
@@ -122,16 +138,12 @@ class inputException {
 }
 
 
-// creating the instance of calculator 
-let calc = new TipCalculator();
+
 
 
 let bill = document.getElementById("bill");
 bill.addEventListener("change", () => {
     inputException.billCheck();
-    calc.bill = bill.value;
-    calc.amountPerPerson();
-    calc.tipPerPerson();
 
 });
 
@@ -139,16 +151,12 @@ bill.addEventListener("change", () => {
 let number = document.getElementById("number");
 number.addEventListener("change", () => {
     inputException.numberCheck();
-    calc.number = number.value;
-    calc.amountPerPerson();
-    calc.tipPerPerson();
-
 });
 
 
 let tip = document.getElementById("tip");
 tip.addEventListener("change", () => {
     calc.tip = tip.value;
-    calc.amountPerPerson();
-    calc.tipPerPerson();
+    calc.amountPerPerson("show");
+    calc.tipPerPerson("show");
 });
