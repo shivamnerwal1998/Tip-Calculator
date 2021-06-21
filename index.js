@@ -40,7 +40,6 @@ class TipCalculator {
 
         }
 
-
     }
     static decrement(id) {
         if (id === "tip") {
@@ -68,6 +67,7 @@ let calc = new TipCalculator();
 
 let bill = document.getElementById("bill");
 bill.addEventListener("change", () => {
+    inputException.billCheck();
     calc.bill = bill.value;
     calc.amountPerPerson();
     calc.tipPerPerson();
@@ -90,3 +90,31 @@ tip.addEventListener("change", () => {
     calc.amountPerPerson();
     calc.tipPerPerson();
 });
+
+class inputException{
+    static billCheck(){
+        let target = document.getElementById("bill").value ;
+        if( Number(target) < 0  ){
+            let line = document.getElementById("billException") ;
+            line.style.display="block" ;
+            line.style.color="red" ;
+            line.style.fontSize = "70%";
+            line.innerHTML = "Bill Should be +ve in value " ; 
+        }
+        else if( isNaN(target) || target == " ") 
+        {
+            let line = document.getElementById("billException") ;
+            line.style.display="block" ;
+            line.style.color="red" ;
+            line.style.fontSize = "70%";
+            line.innerHTML = "Enter a valid number" ; 
+
+        }
+        else if(!isNaN(Number(target))){
+            let line = document.getElementById("billException") ;
+            line.style.display="none";
+        
+        } 
+
+    }
+}
