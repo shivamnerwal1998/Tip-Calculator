@@ -8,45 +8,85 @@ class TipCalculator {
         this.bill = 0;
         this.tip = 0;
         this.number = 1;
+        this.totalBill = 0;
     }
 
-    // method to return total tip 
-    totalTip = () => {
-        let totalTipAmount = this.bill + ((this.bill * this.tip) / 100);
-        return totalTipAmount;
+    // method to display Bill per Person   
+    amountPerPerson() {
+        this.totalTipAmount = (Number(this.bill) + (Number(this.bill) * Number(this.tip)) / 100);
+        this.totalBill = this.totalTipAmount;
+        let eachShare = this.totalBill / Number(this.number);
+        let target = document.getElementById("totalBill");
+        target.innerHTML = "$" + eachShare;
+
     }
 
-    // method to return tip per person 
-    tipPerPerson = (totalTip) => {
-        let tipPerPerson = totalTip / this.number;
+    // method to display tip per person 
+    tipPerPerson = () => {
+        let tipEach = (this.bill) * Number(tip.value) / (Number(this.number) * 100);
+        let target = document.getElementById("tipEach");
+        target.innerHTML = "$" + tipEach;
+
     }
-    // method to return bill per person 
-    billPerPerson = (total) => {
-        let eachShare = total / this.number;
-        return eachShare;
+
+    static increment(id) {
+        if (id === "tip") {
+            console.log("hello world")
+
+        }
+        else if (id === "number") {
+            console.log("hello Number");
+
+
+        }
+
+
     }
-    showBill = () =>{
-        console.log(this.bill) ;
+    static decrement(id) {
+        if (id === "tip") {
+            console.log("hello world")
+
+        }
+        else if (id === "number") {
+            console.log("hello Number");
+
+
+        }
+
+
+
     }
+
 
 
 }
 
+
 // creating the instance of calculator 
 let calc = new TipCalculator();
+
 
 let bill = document.getElementById("bill");
 bill.addEventListener("change", () => {
     calc.bill = bill.value;
-    console.log(calc.billPerPerson(calc.bill)); 
+    calc.amountPerPerson();
+    calc.tipPerPerson();
+
 });
 
 
-
-
-/*
-let tip = document.getElementById("tip");
-console.log( tip.value ) ;
-
 let number = document.getElementById("number");
-console.log( number.value ) ; */
+number.addEventListener("change", () => {
+    calc.number = number.value;
+    calc.amountPerPerson();
+    calc.tipPerPerson();
+
+});
+
+
+let tip = document.getElementById("tip");
+tip.addEventListener("change", () => {
+    calc.tip = tip.value;
+    calc.amountPerPerson();
+    calc.tipPerPerson();
+});
