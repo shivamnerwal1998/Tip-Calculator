@@ -33,7 +33,7 @@ class TipCalculator {
             target.style.display = "none";
         }
     }
-    /* Method for handeling operations of increment button */
+    //Method for handeling operations of increment button 
     static increment(id) {
         let target;
         if (id === "tip") {
@@ -63,7 +63,8 @@ class TipCalculator {
         }
 
     }
-    /* Method of handeling operations of Tip input feild  */
+
+    // Method of handeling operations of Tip input feild 
     static inputTip() {
         let target = document.getElementById("tip");
         let exactValue = target.value;
@@ -182,13 +183,29 @@ class inputException {
     }
     /* Method to handle tip exceptions */
     static tipException(exactValue) {
-        if (false) {
+
+        if (Number(exactValue) < 0) {
+
+            this.showExceptionMessage("tipException", "tip Should be +ve in value");
+            calc.amountPerPerson("hide");
+            calc.tipPerPerson("hide");
+        }
+        else if (exactValue == "" ) {
+
+            this.showExceptionMessage("tipException", "feild Should not be Empty");
+            calc.amountPerPerson("hide");
+            calc.tipPerPerson("hide");
 
         }
-        else if (false) {
+        else if (!(Number.isInteger(Number(exactValue)))) {
+            this.showExceptionMessage("tipException", "Tip should be a positive integer");
+            calc.amountPerPerson("hide");
+            calc.tipPerPerson("hide");
 
         }
+
         else {
+            this.hideExceptionMessage("tipException");
             calc.tip = exactValue;
             calc.amountPerPerson("show");
             calc.tipPerPerson("show");
