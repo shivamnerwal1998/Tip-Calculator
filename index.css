@@ -6,7 +6,7 @@ input::-webkit-inner-spin-button {
 #main{
     margin: auto ;
     margin-top: 60px;
-    width: 50%;
+    width: 70%;
     border: 3px solid grey ; 
     overflow-x: auto;
     border-radius: 7px;
@@ -17,6 +17,7 @@ input::-webkit-inner-spin-button {
     border-right: 3px solid grey;
     padding:30px 30px 30px 30px ;
     margin-right: 2px ;
+
     
 }
 

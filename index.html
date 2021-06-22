@@ -13,7 +13,7 @@
     <div id="main">
         <table id="tab">
             <tr>
-                <td id="leftPart">
+                <td id="leftPart" >
                     <label for="bill" style="color:grey;">Bill</label></br>
                     <input type="number" id="bill" value=0 style="width:90%;
                     padding: 10px;
@@ -22,27 +22,27 @@
                     font-size : large;" />
                     <p id="billException"></p></br>
                     </br>
-                    <label for="tip" style="color:grey;">Tip %</label></br>
+                    <label for="tip" style="color:gray;">Tip %</label></br>
                     <div class="iconDiv">
                         <input type="button" value=" + " onclick="TipCalculator.increment('tip')" />
                         <input type="number" id="tip" class="inputIcon" value=0 />
-                        <input type="button" value=" - "  />
+                        <input type="button" value=" - "  onclick="TipCalculator.decrement('tip')"  />
                     </div>
                     <p id="tipException"></p>
                     </br>
                     </br>
-                    <label for="tip" style="color:rgba(128, 128, 128, 0.356) ;">Number of People</label></br>
+                    <label for="tip" style="color:gray;">Number of People</label></br>
                     <div class="iconDiv">
                         <input type="button" value=" + " onclick="TipCalculator.increment('number')" />
                         <input type="number" id="number" class="inputIcon" value=1 />
-                        <input type="button" value=" - "  />
+                        <input type="button" value=" - " onclick="TipCalculator.decrement('number')"  />
                     </div>
                     <p id="numberException"></p>
 
                 </td>
 
                 <td>
-                    <table style="margin-left: 20px; margin-right:10px; ">
+                    <table style="margin-left: 20px; ">
                         <tr style="vertical-align: bottom;">
 
                             <td>
@@ -50,7 +50,7 @@
                                 <p style="color:grey;">Per person</p>
                             </td>
                             <td>
-                                <h2 id="tipEach" style="margin-left:40px; margin-right:10px;">$0</h2>
+                                <h2 id="tipEach" style="margin-left:40px;">$0</h2>
                             </td>
                         </tr>
 
