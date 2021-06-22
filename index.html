@@ -25,7 +25,7 @@
                     <label for="tip" style="color:gray;">Tip %</label></br>
                     <div class="iconDiv">
                         <input type="button" value=" + " onclick="TipCalculator.increment('tip')" />
-                        <input type="number" id="tip" class="inputIcon" value=0 />
+                        <input type="text" id="tip" class="inputIcon" value=0% onchange="TipCalculator.inputTip()" />
                         <input type="button" value=" - "  onclick="TipCalculator.decrement('tip')"  />
                     </div>
                     <p id="tipException"></p>
