@@ -9,6 +9,7 @@ input::-webkit-inner-spin-button {
     width: 70%;
     border: 3px solid grey ; 
     overflow-x: auto;
+    height:auto;
     border-radius: 7px;
 
 }
