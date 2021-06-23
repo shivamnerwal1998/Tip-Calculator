@@ -1,6 +1,6 @@
 # Tip-Calculator
 
- ## click on the below link to see the working proiject
+ ## Click on the below link to see the working project
  https://shivamnerwal1998.github.io/Tip-Calculator/
  
  ## Functional requirements 
