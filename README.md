@@ -19,6 +19,7 @@
  3. All possible execptions are handled</br></br>
  4. Proper commenting is done in code </br></br>
  5. DRY approach is followed and code does not contain any unused code segment
+ 6. A document containing Test cases is attached in repository
  
   
  
