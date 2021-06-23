@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>TipCalculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>TipCalculator</title>
 </head>
 
 <body>
-    <div id="main">
-        <table id="tab">
-            <tr>
-                <td id="leftPart" >
-                    <label for="bill" style="color:grey;">Bill</label></br>
-                    <input type="number" id="bill" value=0 style="width:90%;
+  <div id="main">
+    <table id="tab">
+      <tr>
+        <td id="leftPart">
+          <label for="bill" style="color:grey;">Bill</label></br>
+          <input type="number" id="bill" value=0 style="width:93%;
                     padding: 10px;
                     border:2px solid gray;
                     text-align: center;
-                    font-size : large;" 
-                    onchange="inputException.billException();"/>
-                    <p id="billException"></p></br>
-                    </br>
-                    <label for="tip" style="color:gray;">Tip %</label></br>
-                    <div class="iconDiv">
-                        <input type="button" value=" + " onclick="TipCalculator.increment('tip')" />
-                        <input type="number" id="tip" class="inputIcon" value=0 onchange="inputException.tipException();" />
-                        <input type="button" value=" - " style="float:right;" onclick="TipCalculator.decrement('tip')"  />
-                    </div>
-                    <p id="tipException"></p>
-                    </br>
-                    </br>
-                    <label for="number" style="color:gray;">Number of People</label></br>
-                    <div class="iconDiv">
-                        <input type="button" value=" + " onclick="TipCalculator.increment('number')" />
-                        <input type="number" id="number" class="inputIcon" value=1 onchange="inputException.numberException();" />
-                        <input type="button" value=" - " style="float: right;" onclick="TipCalculator.decrement('number')"  />
-                    </div>
-                    <p id="numberException"></p>
+                    font-size : large;" onchange="inputException.billException();" />
+          <p id="billException"></p>
+          </br>
+          </br>
+          <label for="tip" style="color:gray;">Tip %</label></br>
+          <div class="iconDiv">
+            <input type="button" value=" - " style="float:left;" onclick="TipCalculator.decrement('tip')" />
+            <input type="number" id="tip" class="inputIcon" value=0 onchange="inputException.tipException();" />
+            <input type="button" value=" + " style="float:right;" onclick="TipCalculator.increment('tip')" />
+          </div>
+          <p id="tipException"></p>
+          </br>
+          </br>
+          <label for="number" style="color:gray;">Number of People</label></br>
+          <div class="iconDiv">
+            <input type="button" value=" - " style="float: left;" onclick="TipCalculator.decrement('number')" />
+            <input type="number" id="number" class="inputIcon" value=1 onchange="inputException.numberException();" />
+            <input type="button" value=" + " style="float:right;" onclick="TipCalculator.increment('number')" />
 
-                </td>
+          </div>
+          <p id="numberException"></p>
 
-                <td>
-                    <table style="margin-left: 20px; ">
-                        <tr style="vertical-align: bottom;">
+        </td>
 
-                            <td>
-                                <h3>Tip</h3>
-                                <p style="color:grey;">Per person</p>
-                            </td>
-                            <td>
-                                <h2 id="tipEach" style="margin-left:40px;">$0</h2>
-                            </td>
-                        </tr>
+        <td>
+          <table style="margin-left: 20px; ">
+            <tr style="vertical-align: bottom;">
 
-                        <tr>
-                            <td>
-                                <h2>Total</h2>
-                                <p style="color:grey ;">Per Person</p>
-                            </td>
-                            <td>
-                                <h1 id="totalBill" style="margin-left:40px ;">$0</h1>
-                            </td>
-                        </tr>
-                    </table>
-
-                </td>
+              <td>
+                <h3>Tip</h3>
+                <p style="color:grey;">Per person</p>
+              </td>
+              <td>
+                <h2 id="tipEach" style="margin-left:40px;">$0</h2>
+              </td>
             </tr>
-        </table>
-    </div>
+
+            <tr>
+              <td>
+                <h2>Total</h2>
+                <p style="color:grey ;">Per Person</p>
+              </td>
+              <td>
+                <h1 id="totalBill" style="margin-left:40px ;">$0</h1>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </div>
 </body>
 <script src="index.js"></script>
 
