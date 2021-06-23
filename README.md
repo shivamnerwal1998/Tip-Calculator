@@ -7,8 +7,8 @@
   Application is providing option for the user to specify :- <br/>
   (a). Bill Amount </br>(b). Tip percentage <br/>(c). Number of people <br/></br>
   Application is displaying :- </br>
-  (b). Bill per person</br> 
-  (c). Tip per Person
+  (a). Bill per person</br> 
+  (b). Tip per Person
  ## Non-Functional requirements
  1 .  Oops concepts are used there are two classed in js file<br/>
  (a):- TipCalculator class :- <br/>this class contains all the methods </br>
