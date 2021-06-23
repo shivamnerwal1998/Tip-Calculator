@@ -157,6 +157,7 @@ class InputException {
     } else if (!(Number.isInteger(Number(target)))) {
       this.showExceptionMessage("numberException",
         "Number should be a positive integer");
+      calc.numberException = true;
       calc.amountPerPerson("hide");
       calc.tipPerPerson("hide");
 
