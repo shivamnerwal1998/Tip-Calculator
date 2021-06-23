@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,23 +18,24 @@
                     padding: 10px;
                     border:2px solid gray;
                     text-align: center;
-                    font-size : large;" />
+                    font-size : large;" 
+                    onchange="inputException.billException();"/>
                     <p id="billException"></p></br>
                     </br>
                     <label for="tip" style="color:gray;">Tip %</label></br>
                     <div class="iconDiv">
                         <input type="button" value=" + " onclick="TipCalculator.increment('tip')" />
-                        <input type="text" id="tip" class="inputIcon" value=0% onchange="TipCalculator.inputTip()" />
-                        <input type="button" value=" - "  onclick="TipCalculator.decrement('tip')"  />
+                        <input type="number" id="tip" class="inputIcon" value=0 onchange="inputException.tipException();" />
+                        <input type="button" value=" - " style="float:right;" onclick="TipCalculator.decrement('tip')"  />
                     </div>
                     <p id="tipException"></p>
                     </br>
                     </br>
-                    <label for="tip" style="color:gray;">Number of People</label></br>
+                    <label for="number" style="color:gray;">Number of People</label></br>
                     <div class="iconDiv">
                         <input type="button" value=" + " onclick="TipCalculator.increment('number')" />
-                        <input type="number" id="number" class="inputIcon" value=1 />
-                        <input type="button" value=" - " onclick="TipCalculator.decrement('number')"  />
+                        <input type="number" id="number" class="inputIcon" value=1 onchange="inputException.numberException();" />
+                        <input type="button" value=" - " style="float: right;" onclick="TipCalculator.decrement('number')"  />
                     </div>
                     <p id="numberException"></p>
 

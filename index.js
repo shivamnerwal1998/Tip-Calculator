@@ -37,43 +37,31 @@ class TipCalculator {
     static increment(id) {
         let target;
         if (id === "tip") {
+            target = document.getElementById("tip");
+            ++(target.value);
+            inputException.tipException();
 
         }
         else if (id === "number") {
             target = document.getElementById("number");
             ++(target.value);
-            inputException.numberCheck();
-            // to add tip check exception here
-
-
+            inputException.numberException();
         }
-
 
     }
     /* method for handling operations of decrement button  */
     static decrement(id) {
         if (id === "tip") {
+            inputException.buttonException(id);
 
         }
         else if (id === "number") {
-            let targrt = document.getElementById("number");
             inputException.buttonException(id);
 
 
         }
 
     }
-
-    // Method of handeling operations of Tip input feild 
-    static inputTip() {
-        let target = document.getElementById("tip");
-        let exactValue = target.value;
-        target.value = target.value + "%";
-        inputException.tipException(exactValue);
-
-    }
-
-
 
 }
 let calc = new TipCalculator(); // creating the instance of TipCalculator class 
@@ -94,7 +82,7 @@ class inputException {
         line.style.display = "none";
     }
     // method to check all the exceptions of Bill input feild 
-    static billCheck() {
+    static billException() {
         let target = document.getElementById("bill").value;
 
         if (Number(target) < 0) {
@@ -120,7 +108,7 @@ class inputException {
 
     }
     //method to handle all exceptions of Number input feild  
-    static numberCheck() {
+    static numberException() {
         let target = document.getElementById("number").value;
         if (Number(target) == 0) {
             this.showExceptionMessage("numberException", "Number should be greater than zero");
@@ -159,10 +147,10 @@ class inputException {
         let target = document.getElementById(id);
 
         if (Number(target.value) == 1 && id == "number") {
-            window.alert("Atleast one member should be there") ;
+            window.alert("Number Exception\nAtleast one member should be there");
         }
         else if (Number(target.value) == 0) {
-            window.alert("Enter a valid number") ;
+            window.alert("Tip Exception\nTip Should be a positive in Value");
         }
         else {
             (target.value)--
@@ -182,46 +170,27 @@ class inputException {
 
     }
     /* Method to handle tip exceptions */
-    static tipException(exactValue) {
-
-        if (Number(exactValue) < 0) {
-
-            this.showExceptionMessage("tipException", "tip Should be +ve in value");
+    static tipException() {
+        let target = document.getElementById("tip").value;
+        if (Number(target) < 0) {
+            this.showExceptionMessage("tipException", "Tip Should be +ve in value");
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
-        else if (exactValue == "" ) {
-
-            this.showExceptionMessage("tipException", "feild Should not be Empty");
+        else if (target.length == 0) {
+            this.showExceptionMessage("tipException", "Enter a Valid Number");
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
-
         }
-        else if (!(Number.isInteger(Number(exactValue)))) {
-            this.showExceptionMessage("tipException", "Tip should be a positive integer");
-            calc.amountPerPerson("hide");
-            calc.tipPerPerson("hide");
-
-        }
-
         else {
             this.hideExceptionMessage("tipException");
-            calc.tip = exactValue;
+            calc.tip = Number(target);
             calc.amountPerPerson("show");
             calc.tipPerPerson("show");
 
         }
 
+
     }
 
 }
-
-let bill = document.getElementById("bill");
-bill.addEventListener("change", () => {
-    inputException.billCheck();
-
-});
-let number = document.getElementById("number");
-number.addEventListener("change", () => {
-    inputException.numberCheck();
-});
