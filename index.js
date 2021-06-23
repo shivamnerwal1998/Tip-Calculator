@@ -44,20 +44,20 @@ class TipCalculator {
       if (id === "tip") {
         target = document.getElementById("tip");
         ++(target.value);
-        inputException.tipException();
+        InputException.tipException();
       } else if (id === "number") {
         target = document.getElementById("number");
         ++(target.value);
-        inputException.numberException();
+        InputException.numberException();
       }
 
     }
     // method for handling operations of decrement button  
   static decrement(id) {
     if (id === "tip") {
-      inputException.buttonException(id);
+      InputException.buttonException(id);
     } else if (id === "number") {
-      inputException.buttonException(id);
+      InputException.buttonException(id);
     }
 
   }
@@ -77,7 +77,7 @@ class TipCalculator {
 var calc = new TipCalculator(); // creating instance of tipclaculator class
 
 /* class containing methods to handle all possible exceptions */
-class inputException {
+class InputException {
 
   //method to show Exception message 
   static showExceptionMessage(id, message) {
@@ -98,7 +98,7 @@ class inputException {
   // method to check any exception remaining
   static confirmOtherExceptions() {
     if (calc.confirmException()) {
-      window.alert("Enter a valid number in heighlighted field");
+      window.alert("Enter a valid number in Highlighted fields");
     } else {
       calc.amountPerPerson("show");
       calc.tipPerPerson("show");

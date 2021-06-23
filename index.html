@@ -10,7 +10,10 @@
 </head>
 
 <body>
+  <!-- div contains all the contents  -->
   <div id="main">
+    <!-- In this table left side containig all control buttos and input boxes 
+     and right side consists all output -->
     <table id="tab">
       <tr>
         <td id="leftPart">
@@ -19,27 +22,46 @@
                     padding: 10px;
                     border:2px solid gray;
                     text-align: center;
-                    font-size : large;" onchange="inputException.billException();" />
+                    font-size : large;" onchange="InputException.billException();" />
+          <!-- when we change the state of bill input box
+         billException method is called of InputException Class 
+         -->
           <p id="billException"></p>
+          <!-- If any exception arrives it will be shown in above tag
+         -->
           </br>
           </br>
           <label for="tip" style="color:gray;">Tip %</label></br>
           <div class="iconDiv">
+            <!-- when we click on decrement button decrement
+             method is called of TipCalculator class   -->
             <input type="button" value=" - " style="float:left;" onclick="TipCalculator.decrement('tip')" />
-            <input type="number" id="tip" class="inputIcon" value=0 onchange="inputException.tipException();" />
+            <input type="number" id="tip" class="inputIcon" value=0 onchange="InputException.tipException();" />
             <input type="button" value=" + " style="float:right;" onclick="TipCalculator.increment('tip')" />
           </div>
+          <!-- when we click on increment button increment method is called of 
+          TipCalculator class -->
+          <!-- when we change the state of Tip input box
+           tipException method is called of InputException Class -->
           <p id="tipException"></p>
+          <!-- If any exception arrives it will be shown above tag
+           -->
+
           </br>
           </br>
           <label for="number" style="color:gray;">Number of People</label></br>
           <div class="iconDiv">
             <input type="button" value=" - " style="float: left;" onclick="TipCalculator.decrement('number')" />
-            <input type="number" id="number" class="inputIcon" value=1 onchange="inputException.numberException();" />
+            <input type="number" id="number" class="inputIcon" value=1 onchange="InputException.numberException();" />
             <input type="button" value=" + " style="float:right;" onclick="TipCalculator.increment('number')" />
-
+            <!-- when we click on increment or decrement buttons increment or 
+            decrement  method will be called of TipCalculator class
+            and when we change the state of number input box the numberException 
+            method will be called of InputERxception class  
+            -->
           </div>
           <p id="numberException"></p>
+          <!-- If any exception arrives shown in above tag -->
 
         </td>
 
@@ -52,6 +74,7 @@
                 <p style="color:grey;">Per person</p>
               </td>
               <td>
+                <!-- Tip will be shown by below tag -->
                 <h2 id="tipEach" style="margin-left:40px;">$0</h2>
               </td>
             </tr>
@@ -61,7 +84,9 @@
                 <h2>Total</h2>
                 <p style="color:grey ;">Per Person</p>
               </td>
+
               <td>
+                <!-- bill will be displayed by below tag -->
                 <h1 id="totalBill" style="margin-left:40px ;">$0</h1>
               </td>
             </tr>
