@@ -6,8 +6,9 @@
  ## Functional requirements 
   Application is providing option for the user to specify <br/>
   Bill Amount </br> Tip percentage <br/> Number of people <br/>
-  Bill per person </br>
-  Tip per Person is displayed 
+  Application is displaying </br>
+  Bill per person 
+  Tip per Person
  ## Non-Functional requirements
  oops concepts are used there are two classed in js file<br/>
  TipCalculator class :- this class contains all the methods </br>
