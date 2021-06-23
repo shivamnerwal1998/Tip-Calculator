@@ -1,4 +1,4 @@
-/* TipCalculator class contains all the methods and proprties of calculator */
+/* TipCalculator class contains all the methods and proprties of Tip calculator */
 class TipCalculator {
     constructor() {
         this.bill = 0;
@@ -37,7 +37,7 @@ class TipCalculator {
         }
     }
 
-    //Method for handeling operations of increment button 
+    //Method for handeling operations of Increment button 
     static increment(id) {
         let target;
         if (id === "tip") {
@@ -53,7 +53,7 @@ class TipCalculator {
         }
 
     }
-    /* method for handling operations of decrement button  */
+    // method for handling operations of decrement button  
     static decrement(id) {
         if (id === "tip") {
             inputException.buttonException(id);
@@ -66,20 +66,23 @@ class TipCalculator {
         }
 
     }
+
     //method to confirm there is no Exception remaining
     confirmException = () => {
-        if( (this.billException || this.tipException || this.numberException) ){
-            return true ; }
-        else{
-            return false ;
+        if ((this.billException || this.tipException || this.numberException)) {
+            return true;
+        }
+        else {
+            return false;
         }
 
     }
 
 }
 
-var calc = new TipCalculator(); 
+var calc = new TipCalculator();
 
+/* class containing methods to handle all possible exceptions */
 class inputException {
 
     //method to show Exception message 
@@ -96,14 +99,15 @@ class inputException {
         let line = document.getElementById(id);
         line.style.display = "none";
     }
-    static confirmOtherExceptions(){
-        if( calc.confirmException() ){
+    // method to check any exception remaining
+    static confirmOtherExceptions() {
+        if (calc.confirmException()) {
             window.alert("Enter a valid number in heighlighted field");
         }
-        else{
-        calc.amountPerPerson("show");
-        calc.tipPerPerson("show");
-        } 
+        else {
+            calc.amountPerPerson("show");
+            calc.tipPerPerson("show");
+        }
 
     }
     // method to check all the exceptions of Bill input feild 
@@ -129,7 +133,7 @@ class inputException {
             this.hideExceptionMessage("billException");
             calc.billException = false;
             calc.bill = bill.value;
-           this.confirmOtherExceptions();
+            this.confirmOtherExceptions();
 
         }
 
@@ -198,7 +202,7 @@ class inputException {
 
 
     }
-    /* Method to handle tip exceptions */
+    // Method to handle tip exceptions 
     static tipException() {
         let target = document.getElementById("tip").value;
         if (Number(target) < 0) {
