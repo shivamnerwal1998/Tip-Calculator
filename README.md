@@ -13,9 +13,9 @@
  TipCalculator class :- this class contains all the methods </br>
  of Tip calculator like calculateTip , calculateBill etc. </br>
  Another class is InputException class which contains all the methods <br/>
- to handle possible exceptions arriving at runtime 
- < javaScript coding conventions are followed />
- < All possible execptions are handled />
+ to handle possible exceptions arriving at runtime</br> 
+ javaScript coding conventions are followed</br> 
+ All possible execptions are handled 
  
   
  
