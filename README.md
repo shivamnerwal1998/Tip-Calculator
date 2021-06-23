@@ -11,6 +11,8 @@
   (b). Tip per Person
  ## Non-Functional requirements
  1 .  Oops concepts are used there are two classes in js file<br/>
+ If there would be any requirement to add a new functionality it can be easily added by utilising Oops concepts like inheritance .  
+ </br>
  (a):- TipCalculator class :- <br/>this class contains all the methods of Tip calculator like calculateTip , calculateBill etc. </br></br>
  (b):- InputException class :- </br> this class contains all the methods to handle possible exceptions arriving at runtime like if user give number of people =  0 etc .   </br></br> 
  2. javaScript coding conventions are followed</br></br> 
