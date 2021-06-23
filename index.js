@@ -5,6 +5,9 @@ class TipCalculator {
         this.tip = 0;
         this.number = 1;
         this.totalBill = 0;
+        this.tipException = false;
+        this.billException = false;
+        this.numberException = false;
     }
     // method to display Bill per Person   
     amountPerPerson = (action) => {
@@ -33,6 +36,7 @@ class TipCalculator {
             target.style.display = "none";
         }
     }
+
     //Method for handeling operations of increment button 
     static increment(id) {
         let target;
@@ -62,11 +66,22 @@ class TipCalculator {
         }
 
     }
+    //method to confirm there is no Exception remaining
+    confirmException = () => {
+        if( (this.billException || this.tipException || this.numberException) ){
+            return true ; }
+        else{
+            return false ;
+        }
+
+    }
 
 }
-let calc = new TipCalculator(); // creating the instance of TipCalculator class 
-// class containing methods to handle input exceptions 
+
+var calc = new TipCalculator(); 
+
 class inputException {
+
     //method to show Exception message 
     static showExceptionMessage(id, message) {
         let line = document.getElementById(id);
@@ -81,6 +96,16 @@ class inputException {
         let line = document.getElementById(id);
         line.style.display = "none";
     }
+    static confirmOtherExceptions(){
+        if( calc.confirmException() ){
+            window.alert("Enter a valid number in heighlighted field");
+        }
+        else{
+        calc.amountPerPerson("show");
+        calc.tipPerPerson("show");
+        } 
+
+    }
     // method to check all the exceptions of Bill input feild 
     static billException() {
         let target = document.getElementById("bill").value;
@@ -88,21 +113,23 @@ class inputException {
         if (Number(target) < 0) {
 
             this.showExceptionMessage("billException", "Bill Should be +ve in value");
+            calc.billException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
         else if (target.length == 0) {
 
             this.showExceptionMessage("billException", "Enter a valid number");
+            calc.billException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
 
         }
         else {
             this.hideExceptionMessage("billException");
+            calc.billException = false;
             calc.bill = bill.value;
-            calc.amountPerPerson("show");
-            calc.tipPerPerson("show");
+           this.confirmOtherExceptions();
 
         }
 
@@ -112,16 +139,19 @@ class inputException {
         let target = document.getElementById("number").value;
         if (Number(target) == 0) {
             this.showExceptionMessage("numberException", "Number should be greater than zero");
+            calc.numberException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
         else if (Number(target) < 0) {
             this.showExceptionMessage("numberException", "Number Should be +ve in value");
+            calc.numberException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
         else if (target.length == 0) {
             this.showExceptionMessage("numberException", "Enter a Valid Number");
+            calc.numberException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
@@ -134,9 +164,9 @@ class inputException {
 
         else {
             this.hideExceptionMessage("numberException");
+            calc.numberException = false;
             calc.number = number.value;
-            calc.amountPerPerson("show");
-            calc.tipPerPerson("show");
+            this.confirmOtherExceptions();
 
         }
 
@@ -162,8 +192,7 @@ class inputException {
                 calc.number = target.value;
 
             }
-            calc.amountPerPerson("show");
-            calc.tipPerPerson("show");
+            this.confirmOtherExceptions();
 
         }
 
@@ -174,19 +203,21 @@ class inputException {
         let target = document.getElementById("tip").value;
         if (Number(target) < 0) {
             this.showExceptionMessage("tipException", "Tip Should be +ve in value");
+            calc.tipException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
         else if (target.length == 0) {
             this.showExceptionMessage("tipException", "Enter a Valid Number");
+            calc.tipException = true;
             calc.amountPerPerson("hide");
             calc.tipPerPerson("hide");
         }
         else {
             this.hideExceptionMessage("tipException");
+            calc.tipException = false;
             calc.tip = Number(target);
-            calc.amountPerPerson("show");
-            calc.tipPerPerson("show");
+            this.confirmOtherExceptions();
 
         }
 
