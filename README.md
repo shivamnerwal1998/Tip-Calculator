@@ -10,7 +10,7 @@
   (a). Bill per person</br> 
   (b). Tip per Person
  ## Non-Functional requirements
- 1 .  Oops concepts are used there are two classed in js file<br/>
+ 1 .  Oops concepts are used there are two classes in js file<br/>
  (a):- TipCalculator class :- <br/>this class contains all the methods </br>
      of Tip calculator like calculateTip , calculateBill etc. </br></br>
  (b):- InputException class :- </br> this class contains all the methods
