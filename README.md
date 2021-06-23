@@ -5,7 +5,7 @@
  
  ## Functional requirements 
   Application is providing option for the user to specify :- <br/>
-  Bill Amount </br> Tip percentage <br/> Number of people <br/>
+  Bill Amount </br> Tip percentage <br/> Number of people <br/></br>
   Application is displaying :- </br>
   Bill per person 
   Tip per Person
